@@ -1,0 +1,5 @@
+./src/components/serverComponents/header-wrapper/index.tsx
+4:47  Error: 'productData' is missing in props validation  react/prop-types
+
+./src/components/serverComponents/resources-section-wrapper/index.tsx
+4:57  Error: 'productData' is missing in props validation  react/prop-types
