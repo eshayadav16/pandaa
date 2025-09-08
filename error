@@ -1,5 +1,23 @@
-./src/components/serverComponents/header-wrapper/index.tsx
-4:47  Error: 'productData' is missing in props validation  react/prop-types
+partNumberContext.tsx: 
+"use client";
+import React, { createContext, useContext, useState } from "react";
+import { ProductDetail } from "@/root/constants/types";
 
-./src/components/serverComponents/resources-section-wrapper/index.tsx
-4:57  Error: 'productData' is missing in props validation  react/prop-types
+const PartNumberContext = createContext(null);
+
+export function PartNumberProvider({ children }) {
+  const [selectedPartNumber, setSelectedPartNumber] = useState<ProductDetail>();
+  return (
+    <PartNumberContext.Provider value={{ selectedPartNumber, setSelectedPartNumber }}>
+      {children}
+    </PartNumberContext.Provider>
+  );
+}
+
+export function usePartNumber() {
+  return useContext(PartNumberContext);
+}
+
+lint error: ./src/app/[locale]/PartNumberContext.tsx
+7:38  Error: 'children' is missing in props validation  react/prop-types
+fix it
